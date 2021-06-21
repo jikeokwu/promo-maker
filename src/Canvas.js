@@ -1,5 +1,4 @@
 import React, { useRef, useState, useEffect } from "react";
-import avatar from "./avatar.jpeg";
 import mil from "./1mil.jpeg";
 import placeholder from "./placeholder.png";
 import SetNumbers from "./SetNumbers";
@@ -69,10 +68,10 @@ function Canvas() {
     ctx.restore();
   };
 
-  const handleChange = (func, e) => {
-    e.preventDefault();
-    func(e.target.value);
-  };
+  // const handleChange = (func, e) => {
+  //   e.preventDefault();
+  //   func(e.target.value);
+  // };
 
   let avatarDisplay;
 
@@ -100,22 +99,22 @@ function Canvas() {
     imageOnAvatar(ctx);
   });
 
-  const download = (e) => {
-    const canvas = e.target;
-    canvas.toBlob(
-      (blob) => {
-        const anchor = document.createElement("a");
-        anchor.download = "my-file-name.jpg"; // optional, but you can give the file a name
-        anchor.href = URL.createObjectURL(blob);
+  // const download = (e) => {
+  //   const canvas = e.target;
+  //   canvas.toBlob(
+  //     (blob) => {
+  //       const anchor = document.createElement("a");
+  //       anchor.download = "my-file-name.jpg"; // optional, but you can give the file a name
+  //       anchor.href = URL.createObjectURL(blob);
 
-        anchor.click(); // ✨ magic!
+  //       anchor.click(); // ✨ magic!
 
-        URL.revokeObjectURL(anchor.href); // remove it from memory and save on memory! 😎
-      },
-      "image/png",
-      1
-    );
-  };
+  //       URL.revokeObjectURL(anchor.href); // remove it from memory and save on memory! 😎
+  //     },
+  //     "image/png",
+  //     1
+  //   );
+  // };
 
   const divStyle = {
     display: "inline-block",

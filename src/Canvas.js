@@ -7,8 +7,8 @@ import SetNumbers from "./SetNumbers";
 function Canvas() {
   const canvasRef = useRef(null);
   const [image, setImage] = useState("");
-  const [name, setName] = useState("Default Name")
-  const [num, setNum] = useState("0")
+  const [name, setName] = useState("Default Name");
+  const [num, setNum] = useState("0");
 
   let drawBoat = (ctx) => {
     let background = document.getElementById("img");
@@ -32,31 +32,31 @@ function Canvas() {
     return this;
   };
 
-  let a = 519
-  let b = 227
-  let c = 420
-  let d = 420
+  let a = 519;
+  let b = 227;
+  let c = 420;
+  let d = 420;
   // let e = 550 // This is for Short Name
-  let e = 470 // This is for Medium Name
+  let e = 490; // This is for Medium Name
   // let e = 400 // This is for Long Name
-  let f = 550
+  let f = 540;
 
-  const updateNum = (val1, val2, val3, val4, val5, val6) =>{
-    a = val1
-    b = val2
-    c = val3
-    d = val4
-    e = val5
-    f = val6
+  const updateNum = (val1, val2, val3, val4, val5, val6) => {
+    a = val1;
+    b = val2;
+    c = val3;
+    d = val4;
+    e = val5;
+    f = val6;
 
-    console.log(e)
-    console.log(f)
-  }
+    console.log(e);
+    console.log(f);
+  };
 
   const imageOnAvatar = (ctx) => {
     let avatar = document.getElementById("avatar");
-    console.log(e, "in")
-    console.log(f, "in")
+    console.log(e, "in");
+    console.log(f, "in");
     ctx.save();
     ctx.font = "50px Impact";
     ctx.fillText(name, e, 790);
@@ -69,10 +69,10 @@ function Canvas() {
     ctx.restore();
   };
 
-  const handleChange = (func, e) =>{
-    e.preventDefault()
-    func(e.target.value)
-  }
+  const handleChange = (func, e) => {
+    e.preventDefault();
+    func(e.target.value);
+  };
 
   let avatarDisplay;
 
@@ -94,10 +94,10 @@ function Canvas() {
   }
 
   useEffect(() => {
-      const canvas = canvasRef.current;
-      const ctx = canvas.getContext("2d");
-      drawBoat(ctx);
-      imageOnAvatar(ctx);
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    drawBoat(ctx);
+    imageOnAvatar(ctx);
   });
 
   const download = (e) => {
@@ -122,7 +122,7 @@ function Canvas() {
     border: "2px solid black",
     padding: "10px",
     margin: "3px",
-    borderRadius: "5px"
+    borderRadius: "5px",
   };
 
   return (
@@ -141,32 +141,32 @@ function Canvas() {
         </div>
       </div>
 
-      <br/>
+      <br />
 
-      <div  style={divStyle}>
+      <div style={divStyle}>
         <p>Name</p>
-        <input onBlur={(e) => setName(e.target.value)}/>
+        <input onBlur={(e) => setName(e.target.value)} />
       </div>
 
-      <div  style={divStyle}>
+      <div style={divStyle}>
         <p>Num Outreaches</p>
-        <input onBlur={(e) => setNum(e.target.value)}/>
+        <input onBlur={(e) => setNum(e.target.value)} />
       </div>
 
       <img src={mil} alt="product" id="img" style={{ display: "none" }} />
       <br />
 
-      <SetNumbers a={a} b={b} c={c} d={d} e={e} f={f} updateNum={updateNum}/>
-      
+      <SetNumbers a={a} b={b} c={c} d={d} e={e} f={f} updateNum={updateNum} />
+
       <input
-            type="submit"
-            onClick={() => {
-              const canvas = canvasRef.current;
-              const ctx = canvas.getContext("2d");
-              drawBoat(ctx);
-              imageOnAvatar(ctx);
-            }}
-          />
+        type="submit"
+        onClick={() => {
+          const canvas = canvasRef.current;
+          const ctx = canvas.getContext("2d");
+          drawBoat(ctx);
+          imageOnAvatar(ctx);
+        }}
+      />
       <canvas
         ref={canvasRef}
         width="1080"

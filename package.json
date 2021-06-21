@@ -2,7 +2,6 @@
   "name": "promo",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://loveworldsonsofministry.org/avatar",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -18,10 +17,7 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app",
-    "rules": {
-      "no-unused-vars": "off"
-    }
+    "extends": "react-app"
   },
   "browserslist": {
     "production": [

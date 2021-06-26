@@ -38,7 +38,7 @@ function Canvas() {
   // let e = 550 // This is for Short Name
   let e = 490; // This is for Medium Name
   // let e = 400 // This is for Long Name
-  let f = 540;
+  let f = 545;
 
   const updateNum = (val1, val2, val3, val4, val5, val6) => {
     a = val1;
@@ -57,11 +57,11 @@ function Canvas() {
     console.log(e, "in");
     console.log(f, "in");
     ctx.save();
-    ctx.font = "50px Impact";
+    ctx.font = "bold 50px Roboto";
     ctx.fillText(name, e, 790);
-    ctx.font = "75px Impact";
+    ctx.font = "bold 75px Roboto";
     ctx.fillStyle = "white";
-    ctx.fillText(num, f, 900);
+    ctx.fillText(num, f, 895);
     ctx.roundRect(a, b, c, d, 360);
     ctx.clip();
     ctx.drawImage(avatar, a, b, c, d);
